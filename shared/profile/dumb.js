@@ -287,6 +287,7 @@ const revokeBase = {
   username: 'chris',
   onCancel: () => console.log('clicked Cancel'),
   onRevoke: () => console.log('clicked Revoke'),
+  isHttps: false,
 }
 
 const dumbRevoke: DumbComponentMap<Revoke> = {
@@ -300,6 +301,7 @@ const dumbRevoke: DumbComponentMap<Revoke> = {
     'Bitcoin': {...revokeBase, platformHandle: '1BjgMvwVkpmmJ5HFGZ3L3H1G6fcKLNGT5h', platform: 'btc'},
     'DNS': {...revokeBase, platformHandle: 'chriscoyne.com', platform: 'dns'},
     'Website': {...revokeBase, platformHandle: 'chriscoyne.com', platform: 'genericWebSite'},
+    'https website': {...revokeBase, isHttps: true, platformHandle: 'chriscoyne.com', platform: 'genericWebSite'},
   },
 }
 
