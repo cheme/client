@@ -62,12 +62,13 @@ export default connect(
   }),
   (stateProps, dispatchProps, ownProps) => {
     const username = ownProps.username || stateProps.myUsername
-    const isYou = username === stateProps.username
+    const isYou = username === stateProps.myUsername
     const bioEditFns = isYou && {
       onEditAvatarClick: () => console.log('TODO'),
       onNameEdit: () => console.log('TODO'),
       onBioEdit: () => console.log('TODO'),
       onLocationEdit: () => console.log('TODO'),
+      onMissingProofClick: () => console.log('TODO onMissingProofClick'),
     }
 
     return {

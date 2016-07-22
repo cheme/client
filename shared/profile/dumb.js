@@ -142,6 +142,7 @@ const propsBase: RenderProps = {
   onAcceptProofs: () => console.log('onAcceptProofs'),
   onFolderClick: folder => { console.log('onFolderClick', folder) },
   onUserClick: username => { console.log('onUserClick', username) },
+  onMissingProofClick: proof => { console.log(`Prove ${proof.type}`) },
   parentProps: isMobile ? {} : {
     style: {
       width: 640,
