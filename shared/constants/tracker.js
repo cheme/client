@@ -6,7 +6,7 @@ import type {Folder} from '../folders/list'
 
 // Simple state of the overall proof result
 export type SimpleProofState = 'normal' | 'warning' | 'error' | 'checking' | 'revoked'
-export type SimpleProofMeta = 'upgraded' | 'new' | 'unreachable' | 'pending' | 'deleted' | 'none' | 'ignored'
+export type SimpleProofMeta = 'upgraded' | 'new' | 'unreachable' | 'pending' | 'deleted' | 'revoked' | 'none' | 'ignored'
 
 // Constants
 export const normal: SimpleProofState = 'normal'
@@ -21,6 +21,7 @@ export const metaNew: SimpleProofMeta = 'new'
 export const metaUnreachable: SimpleProofMeta = 'unreachable'
 export const metaPending: SimpleProofMeta = 'pending'
 export const metaDeleted: SimpleProofMeta = 'deleted'
+export const metaRevoked: SimpleProofMeta = 'revoked'
 export const metaIgnored: SimpleProofMeta = 'ignored'
 
 // Actions

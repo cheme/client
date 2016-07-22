@@ -2,7 +2,7 @@
 
 import {globalColors, globalStyles} from '../styles/style-guide'
 import {normal as proofNormal, checking as proofChecking, revoked as proofRevoked, error as proofError, warning as proofWarning,
-  metaNew, metaUpgraded, metaUnreachable, metaPending, metaDeleted, metaIgnored} from '../constants/tracker'
+  metaNew, metaUpgraded, metaUnreachable, metaPending, metaDeleted, metaRevoked, metaIgnored} from '../constants/tracker'
 
 import type {IconType} from '../common-adapters/icon'
 import type {Proof} from './user-proofs'
@@ -15,6 +15,7 @@ export function metaColor (proof: Proof): string {
     case metaUnreachable: color = globalColors.red; break
     case metaPending: color = globalColors.black_40; break
     case metaDeleted: color = globalColors.red; break
+    case metaRevoked: color = globalColors.red; break
     case metaIgnored: color = globalColors.green; break
   }
   return color
@@ -76,8 +77,9 @@ export function proofStatusIcon (proof: Proof): ?IconType {
 }
 
 export function proofNameStyle (proof: Proof) {
+  const isStriked = proof.meta === metaDeleted || proof.meta === metaRevoked
   return {
     color: proofColor(proof),
-    ...(proof.meta === metaDeleted ? globalStyles.textDecoration('line-through') : {}),
+    ...(isStriked ? globalStyles.textDecoration('line-through') : {}),
   }
 }
